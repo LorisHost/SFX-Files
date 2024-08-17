@@ -6,7 +6,7 @@ local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/d
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/InterfaceManager.lua"))()
 
 local Window = Fluent:CreateWindow({
-    Title = "srtx.lua 1.2.0b",
+    Title = "srtx.lua 1.2.5b",
     SubTitle = "by zerx",
     TabWidth = 160,
     Size = UDim2.fromOffset(550, 340),
@@ -171,12 +171,23 @@ Tabs.Main:AddButton({
 })
 
 Tabs.Main:AddButton({
-    Title = "Tbao Hub",
+    Title = "My Sploit",
     Description = "Arsenal script",
     Callback = function()
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/tbao143/thaibao/main/TbaoHubArsenal"))()
+        loadstring(game:HttpGet('https://raw.githubusercontent.com/wuhaz/arsenal/main/main.lua'))() 
     end
 })
+
+Tabs.Main:AddSection("BedWars")
+
+Tabs.Main:AddButton({
+    Title = "Vape V4",
+    Description = "BedWars script",
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/7GrandDadPGN/VapeV4ForRoblox/main/NewMainScript.lua", true))()
+    end
+})
+
 
 Tabs.Universal:AddSection("Cmds Scripts")
 
@@ -260,6 +271,45 @@ Tabs.Universal:AddButton({
     end
 })
 
+Tabs.Universal:AddSection("Keyboard")
+
+Tabs.Universal:AddButton({
+    Title = "Keyboard",
+    Description = "Keyboard Script",
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/advxzivhsjjdhxhsidifvsh/mobkeyboard/main/main.txt", true))()
+    end
+})
+
+
+Tabs.LocalPayer:AddSection("Player")
+
+Tabs.LocalPayer:AddSlider("Slider", 
+{
+    Title = "Walkspeed",
+    Description = "is a Walkspeed",
+    Default = 16,
+    Min = 0,
+    Max = 150,
+    Rounding = 1,
+    Callback = function(Value)
+        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value
+    end
+})
+
+Tabs.LocalPayer:AddSlider("Slider", 
+{
+    Title = "JumpPower",
+    Description = "is a JumpPower",
+    Default = 16,
+    Min = 0,
+    Max = 150,
+    Rounding = 1,
+    Callback = function(Value)
+        game.Players.LocalPlayer.Character.Humanoid.JumpPower = Value
+    end
+})
+
 --Hand the library over to our managers
 SaveManager:SetLibrary(Fluent)
 InterfaceManager:SetLibrary(Fluent)
@@ -279,3 +329,4 @@ SaveManager:SetFolder("FluentScriptHub/specific-game")
 
 InterfaceManager:BuildInterfaceSection(Tabs.Settings)
 SaveManager:BuildConfigSection(Tabs.Settings)
+
