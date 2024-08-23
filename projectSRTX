@@ -3,7 +3,16 @@ if not game:IsLoaded() then
 end
 
 local function loadScript(url)
-    return loadstring(game:HttpGet(url))()
+    local success, err = pcall(function()
+        loadstring(game:HttpGet(url))()
+    end)
+    if not success then
+        Fluent:Notify({
+            Title = "Error",
+            Content = err,
+            Duration = 5
+        })
+    end
 end
 
 local Fluent = loadScript("https://github.com/dawid-scripts/Fluent/releases/latest/download/main.lua")
@@ -41,102 +50,87 @@ Tabs.info:AddParagraph({
 })
 
 -- Function to add buttons to a section
-local function addScriptButton(tab, sectionTitle, buttons)
+local function addScriptButtons(tab, sectionTitle, scripts)
     tab:AddSection(sectionTitle)
-    for _, button in ipairs(buttons) do
+    for _, script in ipairs(scripts) do
         tab:AddButton({
-            Title = button.Title,
-            Description = button.Description,
+            Title = script.Title,
+            Description = script.Description,
             Callback = function()
-                local success, err = pcall(function()
-                    loadScript(button.Url)
-                end)
-                if not success then
-                    Fluent:Notify({
-                        Title = "Error",
-                        Content = err,
-                        Duration = 5
-                    })
-                end
+                loadScript(script.Url)
             end
         })
     end
 end
 
--- Define scripts for each section
-local mm2Scripts = {
-    { Title = "HighLight Hub", Description = "MM2 script", Url = "https://raw.githubusercontent.com/ThatSick/HighlightMM2/main/Free" },
-    { Title = "Symphony Hub", Description = "MM2 script", Url = "https://raw.githubusercontent.com/ThatSick/ArrayField/main/SymphonyHub.lua" },
-    { Title = "AtherHub", Description = "MM2 script", Url = "https://raw.githubusercontent.com/Athergaming/Roblox-Murder-Mystery-2-Script/main/AtherHub%20Murder%20Mystery%202%20Script.lua" },
-    { Title = "X Hub", Description = "MM2 script", Url = "https://raw.githubusercontent.com/Au0yX/Community/main/XhubMM2" },
-    { Title = "Nexus Hub", Description = "MM2 script", Url = "https://raw.githubusercontent.com/s-o-a-b/nexus/main/loadstring" },
-    { Title = "YARHM hub", Description = "MM2 script", Url = "https://raw.githubusercontent.com/Joystickplays/psychic-octo-invention/main/yarhm.lua" }
-}
-
-local evadeScripts = {
-    { Title = "Ardrak Hub", Description = "Evade script", Url = "https://raw.githubusercontent.com/Hungtu2121/Ardrakhubv7/main/Evade" },
-    { Title = "Tbao Hub", Description = "Evade script", Url = "https://raw.githubusercontent.com/tbao143/thaibao/main/TbaoHubEvade" },
-    { Title = "Hydra Network", Description = "Evade script", Url = "https://raw.githubusercontent.com/Dc2-masket27727/Mobile-s-Hub/main/Main/Hydra/Evade.exe" },
-    { Title = "xyz.beta", Description = "Evade script", Url = "https://raw.githubusercontent.com/xdevslasher/xyz.evade/main/xyz.evade.lua" }
-}
-
-local zombieUprisingScripts = {
-    { Title = "Unknown Hub X Zu", Description = "Zombie Uprising script", Url = "https://raw.githubusercontent.com/Unknownproooolucky/Unknown-Hub-X-Universal-Games/main/Games/Zombie-Uprising" },
-    { Title = "LKA hub", Description = "Zombie Uprising script", Url = "https://raw.githubusercontent.com/dqtixz/Universal-Script-Projeto/main/LKA%20By%20dqtixz%20Script" }
-}
-
-local rivalsScripts = {
-    { Title = "Silent Hub", Description = "Rivals script", Url = "https://raw.githubusercontent.com/KxGOATESQUE/SilentRivals/main/SilentRivals" },
-    { Title = "Tbao Hub", Description = "Rivals script", Url = "https://raw.githubusercontent.com/tbao143/thaibao/main/TbaoHubRivals" },
-    { Title = "Venox Hub", Description = "Rivals script", Url = "https://raw.githubusercontent.com/Kona3366/Rat.dev-Repository/main/loadstring.lua" }
-}
-
-local arsenalScripts = {
-    { Title = "Thunder Client V2", Description = "Arsenal script", Url = "https://raw.githubusercontent.com/andrewdarkyyofficial/thunderclient/main/main.lua" },
-    { Title = "My Sploit", Description = "Arsenal script", Url = "https://raw.githubusercontent.com/wuhaz/arsenal/main/main.lua" }
-}
-
-local bedWarsScripts = {
-    { Title = "Vape V4", Description = "BedWars script", Url = "https://raw.githubusercontent.com/7GrandDadPGN/VapeV4ForRoblox/main/NewMainScript.lua" }
-}
-
-local bladeBallScripts = {
-    { Title = "FFJ hub", Description = "Blade Ball script", Url = "https://raw.githubusercontent.com/FFJ1/Roblox-Exploits/main/scripts/Loader.lua" }
-}
-
-local universalScripts = {
-    { Title = "Infinite yield", Description = "Admin Script", Url = "https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source" },
-    { Title = "Nameless Admin", Description = "Admin Script", Url = "https://raw.githubusercontent.com/ltseverydayyou/Nameless-Admin/main/Source.lua" },
-    { Title = "just Cmd", Description = "Admin Script", Url = "https://raw.githubusercontent.com/lxte/cmd/main/main.lua" },
-    { Title = "CMD X", Description = "Admin Script", Url = "https://raw.githubusercontent.com/CMD-X/CMD-X/master/Source" }
-}
-
-local bypassChatScripts = {
-    { Title = "Bypass Chat V3", Description = "Bypass Chat Script", Url = "https://raw.githubusercontent.com/SkireScripts/Ouxie/main/Projects/simplebypassv3" }
-}
-
-local uncScripts = {
-    { Title = "UNC test", Description = "UNC test Script", Url = "https://github.com/ltseverydayyou/uuuuuuu/blob/main/UNC%20test?raw=true" },
-    { Title = "sUNC", Description = "sUNC Expose functions Script", Url = "https://raw.githubusercontent.com/HummingBird8/HummingRn/main/sUNCTestGET" }
-}
-
-local spinScripts = {
-    { Title = "Spin", Description = "Spin Script", Url = "https://raw.githubusercontent.com/scarlet1837/a/main/speed.lua" }
-}
-
-local panelUniversalScripts = {
-    { Title = "Orca", Description = "Panel Script", Url = "https://raw.githubusercontent.com/richie0866/orca/master/public/snapshot.lua" },
-    { Title = "Sirus", Description = "Panel Script", Url = "https://sirius.menu/script" }
-}
-
-local keyboardScripts = {
-    { Title = "Keyboard", Description = "Keyboard Script", Url = "https://raw.githubusercontent.com/advxzivhsjjdhxhsidifvsh/mobkeyboard/main/main.txt" }
+-- Define all scripts in a table
+local scripts = {
+    MM2 = {
+        { Title = "HighLight Hub", Url = "https://raw.githubusercontent.com/ThatSick/HighlightMM2/main/Free" },
+        { Title = "Symphony Hub", Url = "https://raw.githubusercontent.com/ThatSick/ArrayField/main/SymphonyHub.lua" },
+        { Title = "AtherHub", Url = "https://raw.githubusercontent.com/Athergaming/Roblox-Murder-Mystery-2-Script/main/AtherHub%20Murder%20Mystery%202%20Script.lua" },
+        { Title = "X Hub", Url = "https://raw.githubusercontent.com/Au0yX/Community/main/XhubMM2" },
+        { Title = "Nexus Hub", Url = "https://raw.githubusercontent.com/s-o-a-b/nexus/main/loadstring" },
+        { Title = "YARHM hub", Url = "https://raw.githubusercontent.com/Joystickplays/psychic-octo-invention/main/yarhm.lua" }
+    },
+    Evade = {
+        { Title = "Ardrak Hub", Url = "https://raw.githubusercontent.com/Hungtu2121/Ardrakhubv7/main/Evade" },
+        { Title = "Tbao Hub", Url = "https://raw.githubusercontent.com/tbao143/thaibao/main/TbaoHubEvade" },
+        { Title = "Hydra Network", Url = "https://raw.githubusercontent.com/Dc2-masket27727/Mobile-s-Hub/main/Main/Hydra/Evade.exe" },
+        { Title = "xyz.beta", Url = "https://raw.githubusercontent.com/xdevslasher/xyz.evade/main/xyz.evade.lua" }
+    },
+    ZombieUprising = {
+        { Title = "Unknown Hub X Zu", Url = "https://raw.githubusercontent.com/Unknownproooolucky/Unknown-Hub-X-Universal-Games/main/Games/Zombie-Uprising" },
+        { Title = "LKA hub", Url = "https://raw.githubusercontent.com/dqtixz/Universal-Script-Projeto/main/LKA%20By%20dqtixz%20Script" }
+    },
+    Rivals = {
+        { Title = "Silent Hub", Url = "https://raw.githubusercontent.com/KxGOATESQUE/SilentRivals/main/SilentRivals" },
+        { Title = "Tbao Hub", Url = "https://raw.githubusercontent.com/tbao143/thaibao/main/TbaoHubRivals" },
+        { Title = "Venox Hub", Url = "https://raw.githubusercontent.com/Kona3366/Rat.dev-Repository/main/loadstring.lua" }
+    },
+    Arsenal = {
+        { Title = "Thunder Client V2", Url = "https://raw.githubusercontent.com/andrewdarkyyofficial/thunderclient/main/main.lua" },
+        { Title = "My Sploit", Url = "https://raw.githubusercontent.com/wuhaz/arsenal/main/main.lua" }
+    },
+    BedWars = {
+        { Title = "Vape V4", Url = "https://raw.githubusercontent.com/7GrandDadPGN/VapeV4ForRoblox/main/NewMainScript.lua" }
+    },
+    BladeBall = {
+        { Title = "FFJ hub", Url = "https://raw.githubusercontent.com/FFJ1/Roblox-Exploits/main/scripts/Loader.lua" }
+    },
+    Universal = {
+        { Title = "Infinite yield", Url = "https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source" },
+        { Title = "Nameless Admin", Url = "https://raw.githubusercontent.com/ltseverydayyou/Nameless-Admin/main/Source.lua" },
+        { Title = "just Cmd", Url = "https://raw.githubusercontent.com/lxte/cmd/main/main.lua" },
+        { Title = "CMD X", Url = "https://raw.githubusercontent.com/CMD-X/CMD-X/master/Source" },
+        { Title = "Bypass Chat V3", Url = "https://raw.githubusercontent.com/SkireScripts/Ouxie/main/Projects/simplebypassv3" },
+        { Title = "UNC test", Url = "https://github.com/ltseverydayyou/uuuuuuu/blob/main/UNC%20test?raw=true" },
+        { Title = "sUNC", Url = "https://raw.githubusercontent.com/HummingBird8/HummingRn/main/sUNCTestGET" },
+        { Title = "Spin", Url = "https://raw.githubusercontent.com/scarlet1837/a/main/speed.lua" },
+        { Title = "Orca", Url = "https://raw.githubusercontent.com/richie0866/orca/master/public/snapshot.lua" },
+        { Title = "Sirus", Url = "https://sirius.menu/script" },
+        { Title = "Keyboard", Url = "https://raw.githubusercontent.com/advxzivhsjjdhxhsidifvsh/mobkeyboard/main/main.txt" }
+    }
 }
 
 -- Adding script buttons to the respective sections
-addScriptButton(Tabs.Main, "MM2", mm2Scripts)
-addScriptButton(Tabs.Main, "Evade", evadeScripts)
-addScriptButton(Tabs.Main, "Zombie Uprising", zombieUprisingScripts)
-addScriptButton(Tabs.Main, "Rivals", rivalsScripts)
-addScriptButton(Tabs.Main, "Arsenal", arsenalScripts)
-addScriptButton(Tabs.Main, "BedWars", bedWarsScripts)
+addScriptButtons(Tabs.Main, "MM2", scripts.MM2)
+addScriptButtons(Tabs.Main, "Evade", scripts.Evade)
+addScriptButtons(Tabs.Main, "Zombie Uprising", scripts.ZombieUprising)
+addScriptButtons(Tabs.Main, "Rivals", scripts.Rivals)
+addScriptButtons(Tabs.Main, "Arsenal", scripts.Arsenal)
+addScriptButtons(Tabs.Main, "BedWars", scripts.BedWars)
+addScriptButtons(Tabs.Main, "Blade ball", scripts.BladeBall)
+addScriptButtons(Tabs.Universal, "Cmds Scripts", scripts.Universal)
+
+-- Setup Save and Interface Managers
+SaveManager:SetLibrary(Fluent)
+InterfaceManager:SetLibrary(Fluent)
+
+SaveManager:IgnoreThemeSettings()
+SaveManager:SetIgnoreIndexes({})
+InterfaceManager:SetFolder("FluentScriptHub")
+SaveManager:SetFolder("FluentScriptHub/specific-game")
+
+InterfaceManager:BuildInterfaceSection(Tabs.Settings)
+SaveManager:BuildConfigSection(Tabs.Settings)
