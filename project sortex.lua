@@ -223,11 +223,21 @@ Tabs.Main:AddButton({
 })
 
 Tabs.Main:AddButton({
-   Title = "Venox Hub",
-   Description = "Blade Ball script",
-   Callback = function()
-       loadstring(Game:HttpGet("https://raw.githubusercontent.com/Fsploit/venox-blade-ball-v1/main/K-A-T-S-U-S-F-S-P-L-O-I-T-I-S-A-F-U-R-R-Y%20MAIN%20V4"))() 
-   end
+    Title = "Venox Hub",
+    Description = "Blade Ball script",
+    Callback = function()
+        local success, err = pcall(function()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/Fsploit/venox-blade-ball-v1/main/K-A-T-S-U-S-F-S-P-L-O-I-T-I-S-A-F-U-R-R-Y%20MAIN%20V4"))()
+        end)
+        if not success then
+            -- Handle the error, e.g., notify the user
+            Fluent:Notify({
+                Title = "Error",
+                Content = err,
+                Duration = 5
+            })
+        end
+    end
 })
 
 Tabs.Universal:AddSection("Cmds Scripts")
