@@ -30,7 +30,7 @@ local Options = Fluent.Options
        Duration = 5 -- Set to nil to make the notification not disappear
    })
    
-   Tab:AddParagraph({
+   Tabs.info:AddParagraph({
       Title = "BIG UPDATE WOW",
       Content = "+Added 4 hubs blade ball & section blade , added one hub on MM2"
   })
@@ -205,42 +205,10 @@ Tabs.Main:AddButton({
 Tabs.Main:AddSection("Blade ball")
 
 Tabs.Main:AddButton({
-   Title = "Venox hub",
-   Description = "Blade ball script",
-   Callback = function()
-      loadstring(Game:HttpGet("https://raw.githubusercontent.com/Fsploit/venox-blade-ball-v1/main/K-A-T-S-U-S-F-S-P-L-O-I-T-I-S-A-F-U-R-R-Y%20MAIN%20V4"))() 
-   end
-})
-
-Tabs.Main:AddButton({
    Title = "FFJ hub",
-   Description = "Blade ball script",
+   Description = "Blade Ball script",
    Callback = function()
       loadstring(game:HttpGet("https://raw.githubusercontent.com/FFJ1/Roblox-Exploits/main/scripts/Loader.lua"))() 
-   end
-})
-
-Tabs.Main:AddButton({
-   Title = "Redz hub",
-   Description = "Blade ball script",
-   Callback = function()
-      loadstring(game:HttpGet("https://raw.githubusercontent.com/REDzHUB/BladeBall/main/eng"))() 
-   end
-})
-
-Tabs.Main:AddButton({
-   Title = "Alchemy hub",
-   Description = "Blade ball script",
-   Callback = function()
-      loadstring(game:HttpGet("https://scripts.alchemyhub.xyz"))() 
-   end
-})
-
-Tabs.Main:AddButton({
-   Title = "Prolex hub",
-   Description = "Blade ball script",
-   Callback = function()
-      loadstring(game:HttpGet("https://paste.gg/p/anonymous/1734a4ee207844b994df2f36157afacd/files/1e79ac12fc8a47ef8263d5e9d43b7137/raw"))()
    end
 })
 
