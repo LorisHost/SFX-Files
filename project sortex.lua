@@ -19,14 +19,13 @@ local Tabs = {
    info = Window:AddTab({ Title = "info", Icon = "scroll" }),
    Main = Window:AddTab({ Title = "Main", Icon = "scroll" }),
    Universal = Window:AddTab({ Title = "Universal", Icon = "scroll" }),
-   LocalPayer = Window:AddTab({ Title = "LocalPayer", Icon = "scroll" }),
    Settings = Window:AddTab({ Title = "Settings", Icon = "settings" })
 }
 local Options = Fluent.Options
 
    Fluent:Notify({
        Title = "Loaded",
-       Content = "UNPATCHED VERISON!?",
+       Content = "Hey User",
        SubContent = "Made by Zerx", -- Optional
        Duration = 5 -- Set to nil to make the notification not disappear
    })
@@ -346,34 +345,6 @@ Tabs.Universal:AddButton({
    end
 })
 
-
-Tabs.LocalPayer:AddSection("Player")
-
-Tabs.LocalPayer:AddSlider("Slider", 
-{
-   Title = "Walkspeed",
-   Description = "is a Walkspeed",
-   Default = 35,
-   Min = 0,
-   Max = 150,
-   Rounding = 1,
-   Callback = function(Value)
-       game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value
-   end
-})
-
-Tabs.LocalPayer:AddSlider("Slider", 
-{
-   Title = "JumpPower",
-   Description = "is a JumpPower",
-   Default = 35,
-   Min = 0,
-   Max = 150,
-   Rounding = 1,
-   Callback = function(Value)
-       game.Players.LocalPlayer.Character.Humanoid.JumpPower = Value
-   end
-})
 --Hand the library over to our managers
 SaveManager:SetLibrary(Fluent)
 InterfaceManager:SetLibrary(Fluent)
