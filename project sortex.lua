@@ -208,7 +208,17 @@ Tabs.Main:AddButton({
    Title = "FFJ hub",
    Description = "Blade Ball script",
    Callback = function()
-      loadstring(game:HttpGet("https://raw.githubusercontent.com/FFJ1/Roblox-Exploits/main/scripts/Loader.lua"))() 
+      local success, err = pcall(function()
+         loadstring(game:HttpGet("https://raw.githubusercontent.com/FFJ1/Roblox-Exploits/main/scripts/Loader.lua"))()
+      end)
+      
+      if not success then
+         Fluent:Notify({
+            Title = "Error",
+            Content = err,
+            Duration = 5
+         })
+      end
    end
 })
 
