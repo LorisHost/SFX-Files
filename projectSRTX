@@ -187,14 +187,35 @@ loadstring(game:HttpGet(link))()
 Tabs.Main:AddSection("Dandy's World")
 
 Tabs.Main:AddButton({
-    Title = "Hub",
+    Title = "#1 GUI",
     Description = "Dandy's World",
     Callback = function()
-        loadstring(game:HttpGet(('https://raw.githubusercontent.com/zeuise0002/SSSWWW222/main/README.md'),true))()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Bac0nHck/Scripts/main/Dandy's%20World"))
+    end
+})
+
+Tabs.Main:AddButton({
+    Title = "Ritual Hub",
+    Description = "Dandy's World",
+    Callback = function()
+        local repository = "ritual"
+local server = "discord.gg/ritualrblx"
+
+local link = string.format("https://raw.githubusercontent.com/%s/%s/%s/script", owner, repository, server)
+
+loadstring(game:HttpGet(link))()
     end
 })
 
 Tabs.Main:AddSection("Meme Sea")
+
+Tabs.Main:AddButton({
+    Title = "OMG hub",
+    Description = "Meme Sea",
+    Callback = function()
+       loadstring(game:HttpGet("https://raw.githubusercontent.com/Omgshit/Scripts/main/MainLoader.lua"))()
+    end
+})
 
 Tabs.Main:AddSection("War Tycoon")
 
