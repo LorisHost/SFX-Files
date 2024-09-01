@@ -7,7 +7,7 @@ local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.
 
 local Window = Fluent:CreateWindow({
    Title = "Sortexx Hub",
-   SubTitle = "by zerx",
+   SubTitle = "by zerx / sigma moon",
    TabWidth = 160,
    Size = UDim2.fromOffset(550, 340),
    Acrylic = false, -- The blur may be detectable, setting this to false disables blur entirely
@@ -26,9 +26,9 @@ local Tabs = {
 local Options = Fluent.Options
 
    Fluent:Notify({
-       Title = "Loaded",
-       Content = "Hey User",
-       SubContent = "Made by Zerx", -- Optional
+       Title = "Update Latest",
+       Content = "01.08.2024",
+       SubContent = "Made by Zerx / Sigma Moon", -- Optional
        Duration = 5 -- Set to nil to make the notification not disappear
    })
    
@@ -40,12 +40,12 @@ local Options = Fluent.Options
 
 Tabs.Credits:AddParagraph({
       Title = "Developer / Helper",
-      Content = " ??? "
+      Content = "Sigma Moon (My Best Friend) "
   })
 
 Tabs.info:AddParagraph({
-      Title = "New Update !",
-      Content = "+ Added Tab Hubs Scripts & Credits , 3 Hubs Added On Hubs Scripts"
+      Title = "No Updates",
+      Content = "Nothing go to discord and check on announcements"
   })
 
 Tabs.Hubs:AddSection("Sky Hub")
@@ -91,19 +91,98 @@ Tabs.Main:AddButton({
     Title = "Project Auto v5",
     Description = "JailBreak",
     Callback = function()
-        
+        loadstring(game:HttpGet('https://raw.githubusercontent.com/Pxsta72/ProjectAuto/main/AutoRobV5Beta'))()
     end
 })
 
 Tabs.Main:AddSection("Bee Swarm Simulator")
 
+Tabs.Main:AddButton({
+    Title = "Bacon Hub",
+    Description = "Bee Swarm Simulator",
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/BaconBossScript/BeeSwarmSim/main/BeeSwarmSim"))() 
+    end
+})
+
+Tabs.Main:AddButton({
+    Title = "Histy Hub",
+    Description = "Bee Swarm Simulator",
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Historia00012/HISTORIAHUB/main/BSS%20FREE"))()
+    end
+})
+
+Tabs.Main:AddButton({
+    Title = "Macro Hub",
+    Description = "Bee Swarm Simulator",
+    Callback = function()
+        loadstring(game:HttpGet("https://www.macrov2-script.xyz/macrov3.lua"))()
+    end
+})
+
+
 Tabs.Main:AddSection("Natural Disasters")
+
+Tabs.Main:AddButton({
+    Title = "Six Hub",
+    Description = "Natural Disaters",
+    Callback = function()
+        loadstring(game:HttpGet"https://raw.githubusercontent.com/ySixxNz/Natural-Desastre/SIX-MENU/SIX-HUB-NATURAL-DESASTRE")()
+    end
+})
+
+Tabs.Main:AddButton({
+    Title = "EVA Hub",
+    Description = "Natural Disaters",
+    Callback = function()
+        loadstring(game:HttpGet('https://raw.githubusercontent.com/K9ntra/EVA/main/abc.lua'))()
+    end
+})
 
 Tabs.Main:AddSection("Tower Of Hell")
 
+Tabs.Main:AddButton({
+    Title = "GUI",
+    Description = "Tower Of Hell",
+    Callback = function()
+        loadstring(game:HttpGet("https://gist.githubusercontent.com/BloxiYT/85f97364b6367baac677e109488c9905/raw/c2972a2b892c4193509ddb2fe1ba3061435e1a8a/gistfile1.txt"))() 
+    end
+})
+
+Tabs.Main:AddButton({
+    Title = "Lightux Hub",
+    Description = "Tower Of Hell",
+    Callback = function()
+        loadstring(game:HttpGet(('https://raw.githubusercontent.com/zeuise0002/SSSWWW222/main/README.md'),true))()
+    end
+})
+
 Tabs.Main:AddSection("Driving Empire")
 
+Tabs.Main:AddButton({
+    Title = "Lightux Hub",
+    Description = "Driving Empire",
+    Callback = function()
+        loadstring(game:HttpGet(('https://raw.githubusercontent.com/zeuise0002/SSSWWW222/main/README.md'),true))()
+    end
+})
+
 Tabs.Main:AddSection("Piliar Chase")
+
+Tabs.Main:AddButton({
+    Title = "Ritual Hub",
+    Description = "Piliar Chase",
+    Callback = function()
+        local owner = "ritualrblx"
+local repository = "ritual"
+local server = "discord.gg/ritualrblx"
+
+local link = string.format("https://raw.githubusercontent.com/%s/%s/%s/script", owner, repository, server)
+
+loadstring(game:HttpGet(link))()
+    end
+})
 
 Tabs.Main:AddSection("Dandy's World")
 
@@ -112,6 +191,8 @@ Tabs.Main:AddSection("Meme Sea")
 Tabs.Main:AddSection("War Tycoon")
 
 Tabs.Main:AddSection("Survive The Killer")
+
+Tabs.Main:AddSection("Strongest Battlegrounds")
 
 Tabs.Main:AddSection("Murderer Mystery 2")
 
