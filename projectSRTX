@@ -217,11 +217,76 @@ Tabs.Main:AddButton({
     end
 })
 
+Tabs.Main:AddButton({
+    Title = "Domandic hub",
+    Description = "Meme Sea",
+    Callback = function()
+       loadstring(game:HttpGet('https://raw.githubusercontent.com/Domadicoof/Domadicoof/main/Xzibits/Meme%20Sea%20Script'))()
+    end
+})
+
+Tabs.Main:AddButton({
+    Title = "Redz hub",
+    Description = "Meme Sea",
+    Callback = function()
+       loadstring(game:HttpGet("https://raw.githubusercontent.com/REDzHUB/MemeSea/main/Source.lua"))()
+    end
+})
+
+Tabs.Main:AddButton({
+    Title = "Yuto v3 hub",
+    Description = "Meme Sea",
+    Callback = function()
+       loadstring(game:HttpGet(('https://raw.githubusercontent.com/Binintrozza/yutv2e/main/Yutohub')))()
+    end
+})
+
+
 Tabs.Main:AddSection("War Tycoon")
+
+Tabs.Main:AddButton({
+    Title = "GN hub",
+    Description = "War Tycoon",
+    Callback = function()
+       loadstring(game:HttpGet("https://raw.githubusercontent.com/nici002018/GNHub/master/GNHub.lua", true))()
+    end
+})
 
 Tabs.Main:AddSection("Survive The Killer")
 
+Tabs.Main:AddButton({
+    Title = "Chair Ware Hub",
+    Description = "Survive The Killer",
+    Callback = function()
+       loadstring(game:HttpGet("https://raw.githubusercontent.com/Milan08Studio/ChairWare/main/main.lua"))()
+    end
+})
+
 Tabs.Main:AddSection("Strongest Battlegrounds")
+
+Tabs.Main:AddButton({
+    Title = "Speed X Hub",
+    Description = "Strongest Balltegrounds",
+    Callback = function()
+       loadstring(game:HttpGet("https://raw.githubusercontent.com/AhmadV99/Speed-Hub-X/main/Speed%20Hub%20X.lua", true))()
+    end
+})
+
+Tabs.Main:AddButton({
+    Title = "Kade Hub",
+    Description = "Strongest Balltegrounds",
+    Callback = function()
+       loadstring(game:HttpGet("https://raw.githubusercontent.com/skibiditoiletfan2007/KadeHubRepository/main/Latest.lua"))() 
+    end
+})
+
+Tabs.Main:AddButton({
+    Title = "NSexpression Hub",
+    Description = "Strongest Balltegrounds",
+    Callback = function()
+       loadstring(game:HttpGet("https://github.com/1dontgiveaf/NSExpression/raw/main/script.lua", true))()
+    end
+})
 
 Tabs.Main:AddSection("Murderer Mystery 2")
 
