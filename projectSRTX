@@ -186,6 +186,14 @@ loadstring(game:HttpGet(link))()
 
 Tabs.Main:AddSection("Dandy's World")
 
+Tabs.Main:AddButton({
+    Title = "Hub",
+    Description = "Dandy's World",
+    Callback = function()
+        loadstring(game:HttpGet(('https://raw.githubusercontent.com/zeuise0002/SSSWWW222/main/README.md'),true))()
+    end
+})
+
 Tabs.Main:AddSection("Meme Sea")
 
 Tabs.Main:AddSection("War Tycoon")
