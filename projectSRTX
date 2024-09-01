@@ -79,7 +79,7 @@ Tabs.Hubs:AddButton({
 })
 Tabs.Main:AddSection("JailBreak")
 
-Tab:AddButton({
+Tabs.Main:AddButton({
     Title = "Senstation Hub",
     Description = "JailBreak",
     Callback = function()
@@ -87,7 +87,7 @@ Tab:AddButton({
     end
 })
 
-Tab:AddButton({
+Tabs.Main:AddButton({
     Title = "Project Auto v5",
     Description = "JailBreak",
     Callback = function()
