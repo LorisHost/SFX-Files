@@ -6,7 +6,7 @@ local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/d
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/InterfaceManager.lua"))()
 
 local Window = Fluent:CreateWindow({
-   Title = "srtx.lua 1.4.0b",
+   Title = "Sortexx Hub",
    SubTitle = "by zerx",
    TabWidth = 160,
    Size = UDim2.fromOffset(550, 340),
@@ -39,8 +39,8 @@ local Options = Fluent.Options
 
 
 Tabs.Credits:AddParagraph({
-      Title = "Helper",
-      Content = "doclamchohihi Script Searcher / Ideas for scripts"
+      Title = "Developer / Helper",
+      Content = " ??? "
   })
 
 Tabs.info:AddParagraph({
@@ -77,9 +77,43 @@ Tabs.Hubs:AddButton({
       loadstring(game:HttpGet(('https://raw.githubusercontent.com/debug42O/Ez-Industries-Launcher-Data/master/Launcher.lua'),true))()
    end
 })
+Tabs.Main:AddSection("JailBreak")
 
+Tab:AddButton({
+    Title = "Senstation Hub",
+    Description = "JailBreak",
+    Callback = function()
+        loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/730854e5b6499ee91deb1080e8e12ae3.lua"))()
+    end
+})
 
-Tabs.Main:AddSection("MM2")
+Tab:AddButton({
+    Title = "Project Auto v5",
+    Description = "JailBreak",
+    Callback = function()
+        
+    end
+})
+
+Tabs.Main:AddSection("Bee Swarm Simulator")
+
+Tabs.Main:AddSection("Natural Disasters")
+
+Tabs.Main:AddSection("Tower Of Hell")
+
+Tabs.Main:AddSection("Driving Empire")
+
+Tabs.Main:AddSection("Piliar Chase")
+
+Tabs.Main:AddSection("Dandy's World")
+
+Tabs.Main:AddSection("Meme Sea")
+
+Tabs.Main:AddSection("War Tycoon")
+
+Tabs.Main:AddSection("Survive The Killer")
+
+Tabs.Main:AddSection("Murderer Mystery 2")
 
 Tabs.Main:AddButton({
    Title = "HighLight Hub",
