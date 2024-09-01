@@ -121,6 +121,13 @@ Tabs.Main:AddButton({
     end
 })
 
+Tabs.Main:AddButton({
+   Title = "Survive Hub",
+   Description = "Bee Swarm script",
+   Callback = function()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/NUTellaVING/Survive/main/Loader.lua"))()
+   end
+})
 
 Tabs.Main:AddSection("Natural Disasters")
 
@@ -260,6 +267,106 @@ Tabs.Main:AddButton({
     Callback = function()
        loadstring(game:HttpGet("https://raw.githubusercontent.com/Milan08Studio/ChairWare/main/main.lua"))()
     end
+})
+
+Tabs.Main:AddSection("Brookhaven RP")
+
+Tabs.Main:AddButton({
+   Title = "Ice Hub",
+   Description = "Brookhaven RP script",
+   Callback = function()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/IceMael7/NewIceHub/main/Brookhaven"))()
+   end
+})
+
+Tabs.Main:AddButton({
+   Title = "Sander X Hub",
+   Description = "Brookhaven RP script",
+   Callback = function()
+   loadstring(game:HttpGet('https://raw.githubusercontent.com/sXPiterXs1111/SanderXV2.65/main/sanderXNewV2.65.lua'))()
+   end
+})
+
+Tabs.Main:AddButton({
+   Title = "Redz Hub",
+   Description = "Brookhaven RP script",
+   Callback = function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/REDzHUB/REDzHUB/main/REDzHUB"))()
+   end
+})
+
+Tabs.Main:AddSection("Fling Things and People")
+
+Tabs.Main:AddButton({
+   Title = "FTAP Hub",
+   Description = "Fling Things and People script",
+   Callback = function()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/BlizTBr/scripts/main/FTAP.lua"))()
+   end
+})
+
+Tabs.Main:AddSection("untitled game tag")
+
+Tabs.Main:AddButton({
+   Title = "syn.o Hub",
+   Description = "untitled game tag script",
+   Callback = function()
+   loadstring(game:HttpGet("https://pastebin.com/raw/x24KcyaN"))()
+   end
+})
+
+Tabs.Main:AddButton({
+   Title = "Repear Hub",
+   Description = "untitled game tag script",
+   Callback = function()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/AyoReaper/Reaper-Hub/main/loader.lua'))()
+   end
+})
+
+Tabs.Main:AddSection("Slap Battles")
+
+Tabs.Main:AddButton({
+   Title = "Destroyer X Hub",
+   Description = "Slap Battles script",
+   Callback = function()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/Aquoupi/DestroyerX/main/DestroyerX"))()
+   end
+})
+
+Tabs.Main:AddButton({
+   Title = "Gigan Hub",
+   Description = "Slap Battles script",
+   Callback = function()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/Giangplay/Slap_Battles/main/Slap_Battles.lua"))()
+   end
+})
+
+Tabs.Main:AddSection("Horrific Housing")
+
+Tabs.Main:AddButton({
+   Title = "Horrific Script",
+   Description = "Horrific Housing script",
+   Callback = function()
+       loadstring(game:HttpGet("https://paste.ee/r/GzZjj", true))()
+   end
+})
+
+Tabs.Main:AddSection("Doors")
+
+Tabs.Main:AddButton({
+   Title = "King Hub",
+   Description = "Doors script",
+   Callback = function()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/KINGHUB01/BlackKing-obf/main/Doors%20Blackking%20And%20BobHub"))()
+   end
+})
+
+Tabs.Main:AddButton({
+   Title = "TTYJ Hub",
+   Description = "Doors script",
+   Callback = function()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/Yumiara/Python/main/Main.lua"))()
+   end
 })
 
 Tabs.Main:AddSection("Strongest Battlegrounds")
