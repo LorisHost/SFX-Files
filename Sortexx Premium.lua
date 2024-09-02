@@ -123,6 +123,17 @@ Tabs.Hubs:AddButton({
       loadstring(game:HttpGet(('https://raw.githubusercontent.com/debug42O/Ez-Industries-Launcher-Data/master/Launcher.lua'),true))()
    end
 })
+
+Tabs.Fe:AddSection("Fe Scripts")
+
+Tabs.Main:AddButton({
+    Title = "Sad Boy",
+    Description = "Fe Script",
+    Callback = function()
+        loadstring(game:HttpGet("https://pastebin.com/raw/hgPJbwF0"))()
+    end
+})
+
 Tabs.Main:AddSection("JailBreak")
 
 Tabs.Main:AddButton({
@@ -752,13 +763,13 @@ Tabs.Universal:AddButton({
    end
 })
 
-Tabs.Universal:AddSection("Bypass Chat V3")
+Tabs.Universal:AddSection("Bypass Chat")
 
 Tabs.Universal:AddButton({
-   Title = "Bypass Chat V3",
+   Title = "kawaii",
    Description = "Bypass Chat Script",
    Callback = function()
-       loadstring(game:HttpGet("https://raw.githubusercontent.com/SkireScripts/Ouxie/main/Projects/simplebypassv3"))()
+      loadstring(game:HttpGet("https://raw.githubusercontent.com/hellohellohell012321/KAWAII-BYPASS/main/kawaii-bypass",true))() 
    end
 })
 
