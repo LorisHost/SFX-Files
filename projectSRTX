@@ -89,8 +89,10 @@ Tabs.Credits:AddParagraph({
   })
 
 Tabs.info:AddParagraph({
-      Title = "No Updates",
-      Content = "Hey"..Player.Name..(.)
+      Title = "About Hub",
+      Content = "Premium User = True
+                 Patched = False
+                 Undetected = True"
   })
 
 Tabs.Hubs:AddSection("Sky Hub")
