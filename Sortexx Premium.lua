@@ -134,6 +134,14 @@ Tabs.Fe:AddButton({
     end
 })
 
+Tabs.Fe:AddButton({
+    Title = "Chilling",
+    Description = "Fe Script",
+    Callback = function()
+        loadstring(game:HttpGet("https://scriptblox.com/raw/Universal-Script-FE-Chill-14288"))()
+    end
+})
+
 Tabs.Main:AddSection("JailBreak")
 
 Tabs.Main:AddButton({
