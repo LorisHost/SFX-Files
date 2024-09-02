@@ -1,3 +1,24 @@
+-- Solara Supporting.
+
+-- don't fuck me if not working 
+local function loadScript(url, name)
+    local success, result = pcall(function()
+        return loadstring(game:HttpGet(url))()
+    end)
+    if success then
+        Fluent:Notify({
+            Title = name .. " Loaded",
+            Content = "Successfully executed the script.",
+            Duration = 5
+        })
+    else
+        Fluent:Notify({
+            Title = "Error Loading " .. name,
+            Content = tostring(result),
+            Duration = 5
+        })
+    end
+end
 if not game:IsLoaded() then
    game.Loaded:Wait()
 end
