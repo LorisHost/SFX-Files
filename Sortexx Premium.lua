@@ -63,6 +63,7 @@ local Window = Fluent:CreateWindow({
 local Tabs = {
    info = Window:AddTab({ Title = "information", Icon = "scroll" }),
    Hubs = Window:AddTab({ Title = "Hubs Scripts", Icon = "scroll" }),
+   Fe = Window:AddTab({ Title = "Fe Scripts", Icon = "scroll" }),
    Main = Window:AddTab({ Title = "Games Scripts", Icon = "scroll" }),
    Universal = Window:AddTab({ Title = "Universal", Icon = "scroll" }),
    Credits = Window:AddTab({ Title = "Credits", Icon = "scroll" }),
