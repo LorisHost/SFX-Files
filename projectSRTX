@@ -202,6 +202,14 @@ Tabs.Main:AddButton({
     end
 })
 
+Tabs.Main:AddButton({
+    Title = "GUI",
+    Description = "Infectious Smile",
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/ADSKerOffical/SmileGUI/main/SmileHax33"))() 
+    end
+})
+
 
 Tabs.Main:AddSection("Tower Of Hell")
 
