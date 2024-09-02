@@ -126,7 +126,7 @@ Tabs.Hubs:AddButton({
 
 Tabs.Fe:AddSection("Fe Scripts")
 
-Tabs.Main:AddButton({
+Tabs.Fe:AddButton({
     Title = "Sad Boy",
     Description = "Fe Script",
     Callback = function()
