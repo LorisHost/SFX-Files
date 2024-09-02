@@ -809,6 +809,34 @@ Tabs.Universal:AddButton({
    end
 })
 
+Tabs.Universal:AddSection("Dex Explorer v4")
+
+Tabs.Universal:AddButton({
+   Title = "Dex",
+   Description = "Dex Explorer v4 Script",
+   Callback = function()
+       loadstring(game:GetObjects("rbxassetid://418957341")[1].Source)()
+   end
+})
+
+Tabs.Universal:AddSection("Hydroxide")
+
+Tabs.Universal:AddButton({
+   Title = "Remote Spy",
+   Description = "Hydroxide Script",
+   Callback = function()
+       local owner = "Upbolt"
+local branch = "revision"
+
+local function webImport(file)
+    return loadstring(game:HttpGetAsync(("https://raw.githubusercontent.com/%s/Hydroxide/%s/%s.lua"):format(owner, branch, file)), file .. '.lua')()
+end
+
+webImport("init")
+webImport("ui/main")
+   end
+})
+
 
 Tabs.Universal:AddSection("Spin")
 
