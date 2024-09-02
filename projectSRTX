@@ -192,6 +192,17 @@ Tabs.Main:AddButton({
     end
 })
 
+Tabs.Main:AddSection("Infectious Smile")
+
+Tabs.Main:AddButton({
+    Title = "idk Hub",
+    Description = "Infectious Smile",
+    Callback = function()
+        loadstring(game:HttpGet(("https://raw.githubusercontent.com/Justaverageguym/Hub/main/Scripts/Infectious%20smile.lua")))()
+    end
+})
+
+
 Tabs.Main:AddSection("Tower Of Hell")
 
 Tabs.Main:AddButton({
