@@ -72,7 +72,7 @@ local Options = Fluent.Options
 
    Fluent:Notify({
        Title = "Update Latest",
-       Content = "01.08.2024",
+       Content = "02.09.2024",
        SubContent = "Made by Zerx / Sigma Moon", -- Optional
        Duration = 5 -- Set to nil to make the notification not disappear
    })
@@ -90,7 +90,7 @@ Tabs.Credits:AddParagraph({
 
 Tabs.info:AddParagraph({
       Title = "No Updates",
-      Content = "Nothing go to discord and check on announcements"
+      Content = "Hey"..Player.Name..(.)
   })
 
 Tabs.Hubs:AddSection("Sky Hub")
