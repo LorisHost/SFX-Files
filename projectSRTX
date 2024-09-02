@@ -90,9 +90,7 @@ Tabs.Credits:AddParagraph({
 
 Tabs.info:AddParagraph({
       Title = "About Hub",
-      Content = "Premium User = True
-                 Patched = False
-                 Undetected = True"
+      Content = "Premium User = True"
   })
 
 Tabs.Hubs:AddSection("Sky Hub")
