@@ -222,6 +222,40 @@ Tabs.Main:AddButton({
     end
 })
 
+Tabs.Main:AddSection("BloxFruits")
+
+Tabs.Main:AddButton({
+    Title = "Speed X Hub",
+    Description = "BloxFruits",
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/AhmadV99/Speed-Hub-X/main/Speed%20Hub%20X.lua"))()
+    end
+})
+
+Tabs.Main:AddButton({
+    Title = "Redz Hub",
+    Description = "BloxFruits",
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/REDzHUB/BloxFruits/main/redz9999"))()
+    end
+})
+
+Tabs.Main:AddButton({
+    Title = "W Azure",
+    Description = "BloxFruits",
+    Callback = function()
+        loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/3b2169cf53bc6104dabe8e19562e5cc2.lua"))()
+    end
+})
+
+Tabs.Main:AddButton({
+    Title = "Hoho Hub",
+    Description = "BloxFruits",
+    Callback = function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/acsu123/HOHO_H/main/Loading_UI"))()
+    end
+})
+
 Tabs.Main:AddSection("Infectious Smile")
 
 Tabs.Main:AddButton({
