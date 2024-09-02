@@ -1,3 +1,6 @@
+if not game:IsLoaded() then
+   game.Loaded:Wait()
+end
 local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/releases/latest/download/main.lua"))()
 local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/InterfaceManager.lua"))()
@@ -642,4 +645,150 @@ Tabs.Main:AddButton({
         end)
         if not success then
             Fluent:Notify({
-          
+                Title = "Error",
+                Content = err,
+                Duration = 5
+            })
+        end
+    end
+})
+
+Tabs.Main:AddButton({
+    Title = "Alchemy Hub",
+    Description = "Blade Ball script",
+    Callback = function()
+        local success, err = pcall(function()
+            loadstring(game:HttpGet("https://scripts.alchemyhub.xyz"))()
+        end)
+        if not success then
+            Fluent:Notify({
+                Title = "Error",
+                Content = err,
+                Duration = 5
+            })
+        end
+    end
+})
+
+
+
+Tabs.Universal:AddSection("Cmds Scripts")
+
+Tabs.Universal:AddButton({
+   Title = "Infinite yield",
+   Description = "Admin Script",
+   Callback = function()
+       loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source"))()
+   end
+})
+
+Tabs.Universal:AddButton({
+   Title = "Nameless Admin",
+   Description = "Admin Script",
+   Callback = function()
+       loadstring(game:HttpGet("https://raw.githubusercontent.com/ltseverydayyou/Nameless-Admin/main/Source.lua"))()
+   end
+})
+
+Tabs.Universal:AddButton({
+   Title = "just Cmd",
+   Description = "Admin Script",
+   Callback = function()
+       loadstring(game:HttpGet("https://raw.githubusercontent.com/lxte/cmd/main/main.lua"))()
+   end
+})
+
+Tabs.Universal:AddButton({
+   Title = "CMD X",
+   Description = "Admin Script",
+   Callback = function()
+       loadstring(game:HttpGet("https://raw.githubusercontent.com/CMD-X/CMD-X/master/Source", true))()
+   end
+})
+
+Tabs.Universal:AddSection("Bypass Chat V3")
+
+Tabs.Universal:AddButton({
+   Title = "Bypass Chat V3",
+   Description = "Bypass Chat Script",
+   Callback = function()
+       loadstring(game:HttpGet("https://raw.githubusercontent.com/SkireScripts/Ouxie/main/Projects/simplebypassv3"))()
+   end
+})
+
+Tabs.Universal:AddSection("UNC test / sUNC")
+
+Tabs.Universal:AddButton({
+   Title = "UNC test",
+   Description = "UNC test Script",
+   Callback = function()
+       loadstring(game:HttpGet("https://github.com/ltseverydayyou/uuuuuuu/blob/main/UNC%20test?raw=true"))()
+   end
+})
+
+Tabs.Universal:AddButton({
+   Title = "sUNC",
+   Description = "sUNC Expose functions Script",
+   Callback = function()
+      loadstring(game:HttpGet("https://raw.githubusercontent.com/HummingBird8/HummingRn/main/sUNCTestGET"))()
+   end
+})
+
+
+Tabs.Universal:AddSection("Spin")
+
+Tabs.Universal:AddButton({
+   Title = "Spin",
+   Description = "Spin Script",
+   Callback = function()
+       loadstring(game:HttpGet("https://raw.githubusercontent.com/scarlet1837/a/main/speed.lua"))()
+   end
+})
+
+Tabs.Universal:AddSection("Panel Universal")
+
+Tabs.Universal:AddButton({
+   Title = "Orca",
+   Description = "Panel Script",
+   Callback = function()
+       loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/richie0866/orca/master/public/snapshot.lua"))()
+   end
+})
+
+Tabs.Universal:AddButton({
+   Title = "Sirus",
+   Description = "Panel Script",
+   Callback = function()
+       loadstring(game:HttpGet('https://sirius.menu/script'))()
+   end
+})
+
+Tabs.Universal:AddSection("Keyboard")
+
+Tabs.Universal:AddButton({
+   Title = "Keyboard",
+   Description = "Keyboard Script",
+   Callback = function()
+       loadstring(game:HttpGet("https://raw.githubusercontent.com/advxzivhsjjdhxhsidifvsh/mobkeyboard/main/main.txt", true))()
+   end
+})
+
+--Hand the library over to our managers
+SaveManager:SetLibrary(Fluent)
+InterfaceManager:SetLibrary(Fluent)
+
+-- Ignore keys that are used by ThemeManager.
+-- (we dont want configs to save themes, do we?)
+SaveManager:IgnoreThemeSettings()
+
+-- You can add indexes of elements the save manager should ignore
+SaveManager:SetIgnoreIndexes({})
+
+-- use case for doing it this way:
+-- a script hub could have themes in a global folder
+-- and game configs in a separate folder per game
+InterfaceManager:SetFolder("FluentScriptHub")
+SaveManager:SetFolder("FluentScriptHub/specific-game")
+
+InterfaceManager:BuildInterfaceSection(Tabs.Settings)
+SaveManager:BuildConfigSection(Tabs.Settings)
