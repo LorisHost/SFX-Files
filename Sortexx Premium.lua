@@ -142,6 +142,16 @@ Tabs.Fe:AddButton({
     end
 })
 
+Tabs.Fe:AddButton({
+    Title = "Gelios",
+    Description = "Fe Script",
+    Callback = function()
+        loadstring(game:HttpGet(('https://glot.io/snippets/gua2ntmbdm/raw/main.lua'),true))()
+    end
+})
+
+
+
 Tabs.Main:AddSection("JailBreak")
 
 Tabs.Main:AddButton({
