@@ -1,23 +1,47 @@
--- Solara Supporting.
+-- Undetected Solara Support Script with Memory Optimization
 
--- don't fuck me if not working 
-local function loadScript(url, name)
-    local success, result = pcall(function()
-        return loadstring(game:HttpGet(url))()
+-- Function to safely load and execute a script with memory optimization
+local function safeLoadScript(url, name)
+    local success, result
+    local scriptContent
+
+    -- Attempt to download and load the script securely
+    success, result = pcall(function()
+        scriptContent = game:HttpGet(url)
+        return loadstring(scriptContent)()
     end)
+
+    -- Clear the script content from memory after execution
+    scriptContent = nil
+
+    -- Provide minimal output to avoid detection
     if success then
-        Fluent:Notify({
-            Title = name .. " Loaded",
-            Content = "Successfully executed the script.",
-            Duration = 5
-        })
+        print(name .. " executed successfully.")
     else
-        Fluent:Notify({
-            Title = "Error Loading " .. name,
-            Content = tostring(result),
-            Duration = 5
-        })
+        warn("Failed to load " .. name)
     end
+
+    -- Force garbage collection to clear any leftover data
+    collectgarbage("collect")
+end
+
+-- Function to obfuscate URL and avoid direct detection
+local function obfuscateUrl(url)
+    -- Simple URL obfuscation (this can be made more complex)
+    local encoded = ""
+    for i = 1, #url do
+        encoded = encoded .. string.char(string.byte(url, i) + 1)
+    end
+    return encoded
+end
+
+-- Function to decode and load an obfuscated script URL
+local function loadObfuscatedScript(encodedUrl, name)
+    local url = ""
+    for i = 1, #encodedUrl do
+        url = url .. string.char(string.byte(encodedUrl, i) - 1)
+    end
+    safeLoadScript(url, name)
 end
 if not game:IsLoaded() then
    game.Loaded:Wait()
