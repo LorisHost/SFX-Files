@@ -52,7 +52,7 @@ local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.
 
 local Window = Fluent:CreateWindow({
    Title = "Sortexx Hub + (Premium)",
-   SubTitle = "by zerx / sigma moon",
+   SubTitle = "by zerxcos",
    TabWidth = 160,
    Size = UDim2.fromOffset(550, 340),
    Acrylic = false, -- The blur may be detectable, setting this to false disables blur entirely
@@ -74,7 +74,7 @@ local Options = Fluent.Options
    Fluent:Notify({
        Title = "Update Latest",
        Content = "02.09.2024",
-       SubContent = "Made by Zerx / Sigma Moon", -- Optional
+       SubContent = "Made by ZerxCos", -- Optional
        Duration = 5 -- Set to nil to make the notification not disappear
    })
    
@@ -85,8 +85,8 @@ local Options = Fluent.Options
 
 
 Tabs.Credits:AddParagraph({
-      Title = "Developer / Helper",
-      Content = "Sigma Moon (My Best Friend) "
+      Title = "Fucker And Nigga",
+      Content = "Sigma Moon (Blocked Me Permanently) "
   })
 
 Tabs.info:AddParagraph({
