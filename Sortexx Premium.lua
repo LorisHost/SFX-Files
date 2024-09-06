@@ -63,6 +63,7 @@ local Window = Fluent:CreateWindow({
 local Tabs = {
    info = Window:AddTab({ Title = "information", Icon = "scroll" }),
    Hubs = Window:AddTab({ Title = "Hubs Scripts", Icon = "scroll" }),
+   s = Window:AddTab({ Title = "Sortex Hub", Icon = "scroll" }),
    Fe = Window:AddTab({ Title = "Fe Scripts", Icon = "scroll" }),
    Main = Window:AddTab({ Title = "Games Scripts", Icon = "scroll" }),
    Universal = Window:AddTab({ Title = "Universal", Icon = "scroll" }),
@@ -93,6 +94,114 @@ Tabs.info:AddParagraph({
       Title = "About Hub",
       Content = "Premium User = True"
   })
+
+Tabs.s:AddButton({
+    Title = "Sortex Hub",
+    Description = "Froggie Script",
+    Callback = function()
+   _Hawk = "ohhahtuhthttouttpwuttuaunbotwo"
+
+--loadstring
+local Hawk = loadstring(game:HttpGet("https://raw.githubusercontent.com/TheHanki/HawkHUB/main/LibSources/HawkLib.lua", true))()
+
+--------------------------------------------------------------------------
+
+--Creating Window
+local Window = Hawk:Window({
+	ScriptName = "Sortex Hub - Frogge",
+	DestroyIfExists = true, --if false, gui wont disappear
+	Theme = "White" --Themes: Pink, White, Dark
+})
+
+--Creating Close Button
+Window:Close({
+	visibility = true, --if false, close button will disappear
+	Callback = function()
+		Window:Destroy() --Destroying Gui Function
+	end,
+})
+
+--Creating Minimize Button
+Window:Minimize({
+	visibility = true, --if false, close button will disappear
+	OpenButton = true, -- Visible = false etc, open button.
+	Callback = function()
+	end,
+})
+
+--Creating Tab
+local tab1 = Window:Tab("Main")
+local tab2 = Window:Tab("LocalPlayer")
+
+local newsec = tab1:Section("Perks")
+
+local button = newsec:Button("Noclip","Use Noclip?",function()
+local Noclip = nil
+local Clip = nil
+
+function noclip()
+	Clip = false
+	local function Nocl()
+		if Clip == false and game.Players.LocalPlayer.Character ~= nil then
+			for _,v in pairs(game.Players.LocalPlayer.Character:GetDescendants()) do
+				if v:IsA('BasePart') and v.CanCollide and v.Name ~= floatName then
+					v.CanCollide = false
+				end
+			end
+		end
+		wait(0.21) -- basic optimization
+	end
+	Noclip = game:GetService('RunService').Stepped:Connect(Nocl)
+end
+
+function clip()
+	if Noclip then Noclip:Disconnect() end
+	Clip = true
+end
+
+noclip() -- to toggle noclip() and clip()
+end)
+
+local button = tab1:Button("HighLight","Use To view Players / Frogge",function()
+while wait(1) do
+local players = game.Players:GetPlayers()
+
+for i,v in pairs(players) do
+ local esp = Instance.new("Highlight")
+ esp.Name = v.Name
+ esp.FillTransparency = 0.5
+ esp.FillColor = Color3.new(0, 0, 0)
+ esp.OutlineColor = Color3.new(255, 255, 255)
+ esp.OutlineTransparency = 0
+ esp.Parent = v.Character
+end
+end
+end)
+
+
+
+local newsec = tab2:Section("WalkSpeed")
+local slider = tab2:Slider("WalkSpeed",16,100,function(value)
+	  game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = value
+end)
+
+local newsec = tab2:Section("JumpPower")
+local slider = tab2:Slider("JumpPower",16,100,function(value)
+	  game.Players.LocalPlayer.Character.Humanoid.JumpPower = value
+end)
+
+local button = tab2:Button("inf Jump","e script",function()
+InfiniteJumpEnabled = true
+game:GetService("UserInputService").JumpRequest:connect(function()
+    if InfiniteJumpEnabled then
+        game:GetService"Players".LocalPlayer.Character:FindFirstChildOfClass'Humanoid':ChangeState("Jumping")
+    end
+end) 
+end)
+
+            
+    end
+})
 
 Tabs.Hubs:AddSection("Sky Hub")
 Tabs.Hubs:AddButton({
@@ -150,14 +259,6 @@ Tabs.Fe:AddButton({
     Description = "Fe Script",
     Callback = function()
         loadstring(game:HttpGet("https://scriptblox.com/raw/Universal-Script-FE-Chill-14288"))()
-    end
-})
-
-Tabs.Fe:AddButton({
-    Title = "Gelios",
-    Description = "Fe Script",
-    Callback = function()
-        loadstring(game:HttpGet(('https://glot.io/snippets/gua2ntmbdm/raw/main.lua'),true))()
     end
 })
 
