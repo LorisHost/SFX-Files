@@ -51,10 +51,10 @@ local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/d
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/InterfaceManager.lua"))()
 
 local Window = Fluent:CreateWindow({
-   Title = "Sortexx Hub + (Premium)",
+   Title = "Sortex Universal",
    SubTitle = "by zerxcos",
-   TabWidth = 160,
-   Size = UDim2.fromOffset(550, 340),
+   TabWidth = 150,
+   Size = UDim2.fromOffset(550, 330),
    Acrylic = false, -- The blur may be detectable, setting this to false disables blur entirely
    Theme = "Darker",
    MinimizeKey = Enum.KeyCode.LeftControl
@@ -121,6 +121,15 @@ Tabs.Hubs:AddButton({
    Description = "Hub script",
    Callback = function()
       loadstring(game:HttpGet(('https://raw.githubusercontent.com/debug42O/Ez-Industries-Launcher-Data/master/Launcher.lua'),true))()
+   end
+})
+
+Tabs.Hubs:AddSection("Lordis")
+Tabs.Hubs:AddButton({
+   Title = "Lordis Hub",
+   Description = "Hub script",
+   Callback = function()
+      loadstring(game:HttpGet('https://pastebin.com/raw/0iwSFSYq'))()
    end
 })
 
@@ -485,7 +494,7 @@ Tabs.Main:AddButton({
    Title = "King Hub",
    Description = "Doors script",
    Callback = function()
-   loadstring(game:HttpGet("https://raw.githubusercontent.com/KINGHUB01/BlackKing-obf/main/Doors%20Blackking%20And%20BobHub"))()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/DarkDoorsKing/Doors/main/Main"))()
    end
 })
 
