@@ -124,12 +124,12 @@ Tabs.Hubs:AddButton({
    end
 })
 
-Tabs.Hubs:AddSection("Lordis")
+Tabs.Hubs:AddSection("Universal Hub")
 Tabs.Hubs:AddButton({
-   Title = "Lordis Hub",
+   Title = "JJ HH GAMING Hub",
    Description = "Hub script",
    Callback = function()
-      loadstring(game:HttpGet('https://pastebin.com/raw/0iwSFSYq'))()
+      loadstring(game:HttpGet("https://freenote.biz/raw/SkG1nrBqE8",true))()
    end
 })
 
@@ -142,6 +142,8 @@ Tabs.Fe:AddButton({
         loadstring(game:HttpGet("https://pastebin.com/raw/hgPJbwF0"))()
     end
 })
+
+
 
 Tabs.Fe:AddButton({
     Title = "Chilling",
@@ -156,6 +158,22 @@ Tabs.Fe:AddButton({
     Description = "Fe Script",
     Callback = function()
         loadstring(game:HttpGet(('https://glot.io/snippets/gua2ntmbdm/raw/main.lua'),true))()
+    end
+})
+
+Tabs.Fe:AddButton({
+    Title = "Gelios",
+    Description = "Fe Script",
+    Callback = function()
+        loadstring(game:HttpGet(('https://glot.io/snippets/gua2ntmbdm/raw/main.lua'),true))()
+    end
+})
+
+Tabs.Fe:AddButton({
+    Title = "Fling",
+    Description = "Fe Script",
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/ADSKerOffical/FlingPlayers/main/FlingGUI"))()
     end
 })
 
