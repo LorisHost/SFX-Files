@@ -579,6 +579,14 @@ Tabs.Main:AddButton({
    end
 })
 
+Tabs.Main:AddButton({
+   Title = "Game Enchaner",
+   Description = "untitled game tag script",
+   Callback = function()
+    loadstring(game:HttpGet("https://pastebin.com/raw/8Z1LC7sE"))()
+   end
+})
+
 Tabs.Main:AddSection("Slap Battles")
 
 Tabs.Main:AddButton({
