@@ -92,7 +92,7 @@ Tabs.Credits:AddParagraph({
 
 Tabs.info:AddParagraph({
       Title = "About Hub",
-      Content = "Premium User = True"
+      Content = "i made it Hub Alone So if you have any problems tell me, Hub have 29+ games im not update every Day because of School"
   })
 
 Tabs.s:AddButton({
