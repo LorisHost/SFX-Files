@@ -421,6 +421,36 @@ Tabs.Main:AddButton({
     end
 })
 
+Tabs.Main:AddSection("Da Hood")
+
+Tabs.Main:AddButton({
+    Title = "Azure Hub",
+    Description = "Da Hood",
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Actyrn/Scripts/main/AzureModded"))()
+    end
+})
+
+Tabs.Main:AddButton({
+    Title = "Silent Aim With Fov",
+    Description = "Da Hood",
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/kazuapad/kazuscripts/main/kazusilentfov"))();
+    end
+})
+
+
+Tabs.Main:AddSection("Spider")
+
+Tabs.Main:AddButton({
+    Title = "Give Items",
+    Description = "Spider",
+    Callback = function()
+        loadstring(game:HttpGet("https://abre.ai/spider-lua"))()
+    end
+})
+
+
 Tabs.Main:AddSection("Driving Empire")
 
 Tabs.Main:AddButton({
