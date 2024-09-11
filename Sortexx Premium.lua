@@ -74,7 +74,7 @@ local Options = Fluent.Options
 
    Fluent:Notify({
        Title = "Update Latest",
-       Content = "02.09.2024",
+       Content = "12.09.2024",
        SubContent = "Made by ZerxCos", -- Optional
        Duration = 5 -- Set to nil to make the notification not disappear
    })
@@ -383,6 +383,63 @@ Tabs.Main:AddButton({
     loadstring(game:HttpGet("https://raw.githubusercontent.com/acsu123/HOHO_H/main/Loading_UI"))()
     end
 })
+
+Tabs.Main:AddSection("Strucid")
+
+Tabs.Main:AddButton({
+    Title = "Astro Hub",
+    Description = "Strucid",
+    Callback = function()
+       loadstring(game:HttpGet("https://raw.githubusercontent.com/AstroPublic/Astro.Public/main/astro.loader", true))()
+    end
+})
+
+Tabs.Main:AddButton({
+    Title = "Strucid Script",
+    Description = "Strucid",
+    Callback = function()
+       loadstring(game:HttpGet("https://raw.githubusercontent.com/10x00/Public-Cracks/main/Apollo%20Hub%20Crack.lua"))()
+    end
+})
+
+
+Tabs.Main:AddSection("Zombie Attack")
+
+
+Tabs.Main:AddButton({
+    Title = "Lightux Hub",
+    Description = "Zombie Attack",
+    Callback = function()
+       loadstring(game:HttpGet(('https://raw.githubusercontent.com/zeuise0002/SSSWWW222/main/README.md'),true))()
+    end
+})
+
+Tabs.Main:AddButton({
+    Title = "Project LKA Hub",
+    Description = "Zombie Attack",
+    Callback = function()
+      loadstring(game:HttpGet("https://raw.githubusercontent.com/dqtixz/Zombie-Attack-Remake/main/Projeto%20LKA"))(); 
+    end
+})
+
+Tabs.Main:AddSection("Flee The Facility")
+
+Tabs.Main:AddButton({
+    Title = "infinity Hub",
+    Description = "Flee The Facility",
+    Callback = function()
+       loadstring(game:HttpGet('https://raw.githubusercontent.com/Aboahaogsigsigaivva/__Scripts/__Main/__Code/__FleeTheFacility.lua'))()
+    end
+})
+
+Tabs.Main:AddButton({
+    Title = "H-Hub",
+    Description = "Flee The Facility",
+    Callback = function()
+       loadstring(game:HttpGet('https://pastebin.com/raw/3uMsh1vn'))()
+    end
+})
+
 
 Tabs.Main:AddSection("Infectious Smile")
 
