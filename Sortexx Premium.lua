@@ -1,4 +1,4 @@
--- Undetected Solara Support Script with Memory Optimization
+q-- Undetected Solara Support Script with Memory Optimization
 
 -- Function to safely load and execute a script with memory optimization
 local function safeLoadScript(url, name)
@@ -349,6 +349,41 @@ Tabs.Main:AddButton({
         loadstring(game:HttpGet('https://raw.githubusercontent.com/K9ntra/EVA/main/abc.lua'))()
     end
 })
+
+Tabs.Main:AddSection("Murderers VS Sheriffs Duels")
+
+Tabs.Main:AddButton({
+    Title = "X RO Hub",
+    Description = "Murderers VS Sheriffs Duels",
+    Callback = function()
+        loadstring(game:HttpGetAsync'https://x-ro.cc/modules/loadstring.lua')''
+    end
+})
+
+Tabs.Main:AddButton({
+    Title = "MSVD Hub",
+    Description = "Murderers VS Sheriffs Duels",
+    Callback = function()
+       loadstring(game:HttpGet('https://raw.githubusercontent.com/synscripts/scripts/main/syn/MVSD.lua'))()
+    end
+})
+
+Tabs.Main:AddButton({
+    Title = "Rinns Hub",
+    Description = "Murderers VS Sheriffs Duels",
+    Callback = function()
+       loadstring(game:HttpGet("https://raw.githubusercontent.com/SkibidiCen/MainMenu/main/Code"))()
+    end
+})
+
+Tabs.Main:AddButton({
+    Title = "Rinns Hub",
+    Description = "Murderers VS Sheriffs Duels",
+    Callback = function()
+      loadstring(game:HttpGet('https://syrexhub.netlify.app/raw/syrexhub'))()
+    end
+})
+
 
 Tabs.Main:AddSection("BloxFruits")
 
