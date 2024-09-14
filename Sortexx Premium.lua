@@ -356,7 +356,7 @@ Tabs.Main:AddButton({
     Title = "X RO Hub",
     Description = "Murderers VS Sheriffs Duels",
     Callback = function()
-        loadstring(game:HttpGetAsync'https://x-ro.cc/modules/loadstring.lua')''
+        loadstring(game:HttpGetAsync'https://x-ro.cc/modules/loadstring.lua')		
     end
 })
 
