@@ -1,4 +1,4 @@
-q-- Undetected Solara Support Script with Memory Optimization
+-- Undetected Solara Support Script with Memory Optimization
 
 -- Function to safely load and execute a script with memory optimization
 local function safeLoadScript(url, name)
