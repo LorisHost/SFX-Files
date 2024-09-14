@@ -74,8 +74,8 @@ local Options = Fluent.Options
 
    Fluent:Notify({
        Title = "Update Latest",
-       Content = "12.09.2024",
-       SubContent = "Made by ZerxCos", -- Optional
+       Content = "15.09.2024",
+       SubContent = "Made by ZerxCos / Nexus", -- Optional
        Duration = 5 -- Set to nil to make the notification not disappear
    })
    
@@ -377,7 +377,7 @@ Tabs.Main:AddButton({
 })
 
 Tabs.Main:AddButton({
-    Title = "Rinns Hub",
+    Title = "Syrex Hub",
     Description = "Murderers VS Sheriffs Duels",
     Callback = function()
       loadstring(game:HttpGet('https://syrexhub.netlify.app/raw/syrexhub'))()
