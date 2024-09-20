@@ -356,6 +356,16 @@ Tabs.Main:AddButton({
     end
 })
 
+Tabs.Main:AddSection("Weaponry")
+
+Tabs.Main:AddButton({
+    Title = "Nexus Hub",
+    Description = "Weaponry",
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/s-o-a-b/nexus/main/loadstring"))()
+    end
+})
+
 Tabs.Main:AddSection("Murderers VS Sheriffs Duels")
 
 Tabs.Main:AddButton({
