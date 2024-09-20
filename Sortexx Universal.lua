@@ -278,7 +278,13 @@ Tabs.Fe:AddButton({
     end
 })
 
-
+Tabs.Fe:AddButton({
+    Title = "Chat Draw",
+    Description = "Fe Script",
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercortent.com/balditeacher/obfuscated-mobile-supportloadstring/main/obfuscated"))()
+    end
+})
 
 Tabs.Main:AddSection("JailBreak")
 
