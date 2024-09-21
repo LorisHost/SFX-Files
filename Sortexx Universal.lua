@@ -52,7 +52,7 @@ local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.
 
 local Window = Fluent:CreateWindow({
    Title = "Sortex Universal",
-   SubTitle = "by zerxcos",
+   SubTitle = "by zerxcos / nexus",
    TabWidth = 150,
    Size = UDim2.fromOffset(580, 330),
    Acrylic = false, -- The blur may be detectable, setting this to false disables blur entirely
@@ -74,7 +74,7 @@ local Options = Fluent.Options
 
    Fluent:Notify({
        Title = "Update Latest",
-       Content = "15.09.2024",
+       Content = "21.09.2024",
        SubContent = "Made by ZerxCos / Nexus", -- Optional
        Duration = 5 -- Set to nil to make the notification not disappear
    })
@@ -86,13 +86,13 @@ local Options = Fluent.Options
 
 
 Tabs.Credits:AddParagraph({
-      Title = "Fucker And Nigga",
-      Content = "Sigma Moon (Blocked Me Permanently) "
+      Title = "Scripter",
+      Content = "essiwr Unpatcher / Replace Non Working Scripts"
   })
 
 Tabs.info:AddParagraph({
       Title = "About Hub",
-      Content = "i made it Hub Alone So if you have any problems tell me, Hub have 29+ games im not update every Day because of School"
+      Content = "i made it Hub Alone So if you have any problems tell me, Hub have 35+ games im not update every Day because of School"
   })
 
 Tabs.s:AddButton({
@@ -355,6 +355,8 @@ Tabs.Main:AddButton({
         loadstring(game:HttpGet('https://raw.githubusercontent.com/K9ntra/EVA/main/abc.lua'))()
     end
 })
+
+Tabs.Main:AddSection("Anime Defenders")
 
 Tabs.Main:AddSection("Weaponry")
 
