@@ -971,6 +971,14 @@ Tabs.Main:AddButton({
    end
 })
 
+Tabs.Main:AddButton({
+   Title = "Repear Hub",
+   Description = "Arsenal script",
+   Callback = function()
+       loadstring(game:HttpGet("https://raw.githubusercontent.com/AyoReaper/Reaper-Hub/main/loader.lua"))()
+   end
+})
+
 Tabs.Main:AddSection("BedWars")
 
 Tabs.Main:AddButton({
@@ -1142,6 +1150,16 @@ Tabs.Universal:AddButton({
    Description = "Dex Explorer v4 Script",
    Callback = function()
        loadstring(game:GetObjects("rbxassetid://418957341")[1].Source)()
+   end
+})
+
+Tabs.Universal:AddSection("Fly Gui v3")
+
+Tabs.Universal:AddButton({
+   Title = "Fly Gui v3",
+   Description = "Fly Gui Script",
+   Callback = function()
+       loadstring(game:HttpGet("https://raw.githubusercontent.com/XNEOFF/FlyGuiV3/main/FlyGuiV3.txt"))()
    end
 })
 
