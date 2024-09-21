@@ -979,6 +979,14 @@ Tabs.Main:AddButton({
    end
 })
 
+Tabs.Main:AddButton({
+   Title = "Tbao Hub",
+   Description = "Arsenal script",
+   Callback = function()
+       loadstring(game:HttpGet("https://raw.githubusercontent.com/tbao143/thaibao/main/TbaoHubArsenal"))
+   end
+})
+
 Tabs.Main:AddSection("BedWars")
 
 Tabs.Main:AddButton({
