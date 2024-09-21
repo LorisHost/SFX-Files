@@ -358,6 +358,22 @@ Tabs.Main:AddButton({
 
 Tabs.Main:AddSection("Anime Defenders")
 
+Tabs.Main:AddButton({
+    Title = "Buang Hub",
+    Description = "Anime Defenders",
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/buang5516/buanghub/main/BUANGHUB.lua"))()
+    end
+})
+
+Tabs.Main:AddButton({
+    Title = "Nousigi Hub",
+    Description = "Anime Defenders",
+    Callback = function()
+          loadstring(game:HttpGet("https://raw.githubusercontent.com/scriptpastebin/raw/main/Nausigi"))()
+    end
+})
+
 Tabs.Main:AddSection("Weaponry")
 
 Tabs.Main:AddButton({
