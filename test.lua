@@ -54,6 +54,9 @@ Rayfield:Notify({
 info:CreateParagraph({Title = "Sometimes CallBack Error that means Not Supported Game or Not Working Script", Content = "Credits : Sortex / Fortex (Tencent)"})
 
 local Games = Window:CreateTab("Games Scripts",10734943448)
+local Games = Window:CreateTab("Fe Scripts","folder")
+local Games = Window:CreateTab("Universal Scripts","accessibility")
+local Games = Window:CreateTab("UI Settings","settings")
 
 Games:CreateSection("JailBreak")
 
