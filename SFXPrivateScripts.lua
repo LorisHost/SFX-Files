@@ -8,7 +8,7 @@ local List = {
     end)
 }
 
--- Execute all hooks using pairs (no bypass())
-for _, _ in pairs(List) do
-    -- All hooks are executed when the list is defined
+-- Execute all hooks (they are set automatically upon defining the List)
+for _, hook in pairs(List) do
+    -- This will just set the hooks when the table is defined
 end
