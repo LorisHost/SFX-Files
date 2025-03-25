@@ -1,73 +1,60 @@
 local function hook(func, fallback)
-    return hookfunction(func, function(...)
-        warn(func .. " called!")
-        return checkcaller() and func(...) or fallback
+    local hookedFunction = hookfunction(func, function(...)
+        if checkcaller() then
+            return func(...)
+        end
+        warn(debug.info(2, "n") .. " called " .. tostring(func))
+        return fallback
     end)
+    
+    setmetatable(hookedFunction, {
+        __tostring = function() return tostring(func) end
+    })
+    
+    return hookedFunction
 end
 
-_G = hook(_G, {})
-getgc = hook(getgc, {})
-debug.getinfo = hook(debug.getinfo, nil)
-debug.getupvalues = hook(debug.getupvalues, {})
-debug.getconstants = hook(debug.getconstants, {})
+debug.getinfo = hook(debug.getinfo, function() return {what = "C"} end)
+debug.getupvalues = hook(debug.getupvalues, function() return {} end)
+debug.getconstants = hook(debug.getconstants, function() return {} end)
 debug.traceback = hook(debug.traceback, "")
 debug.setupvalue = hook(debug.setupvalue, nil)
+
 getreg = hook(getreg, {})
+getgc = hook(getgc, {})
 getfenv = hook(getfenv, {})
 setfenv = hook(setfenv, nil)
+
 pairs = hook(pairs, {})
---- Hiden Funcs
-_G = hookfunction(_G, function()
-    warn("_G accessed!")
-    return checkcaller() and _G or {}
-end)
 
-getgc = hookfunction(getgc, function(...) 
-    warn("getgc called!") 
-    return checkcaller() and getgc(...) or {} 
-end)
+hookfunction(hookfunction, function() return nil end)
 
-debug.getinfo = hookfunction(debug.getinfo, function(func, ...)
-    warn("debug.getinfo called!") 
-    return checkcaller() and debug.getinfo(func, ...) or nil
-end)
+local oldG = _G
+_G = setmetatable({}, {
+    __index = function(_, k)
+        warn("_G access: " .. tostring(k))
+        return oldG[k]
+    end,
+    __newindex = function(_, k, v)
+        warn("_G modified: " .. tostring(k))
+        oldG[k] = v
+    end
+})
 
-debug.getupvalues = hookfunction(debug.getupvalues, function(func)
-    warn("debug.getupvalues called!") 
-    return checkcaller() and debug.getupvalues(func) or {}
-end)
+local function hideFunction(func)
+    return setmetatable({}, {
+        __call = function(_, ...) return func(...) end,
+        __tostring = function() return "function: 0x" .. string.sub(tostring(func), 11) end
+    })
+end
 
-debug.getconstants = hookfunction(debug.getconstants, function(func)
-    warn("debug.getconstants called!") 
-    return checkcaller() and debug.getconstants(func) or {}
-end)
-
-debug.traceback = hookfunction(debug.traceback, function(...)
-    warn("debug.traceback called!") 
-    return checkcaller() and debug.traceback(...) or ""
-end)
-
-debug.setupvalue = hookfunction(debug.setupvalue, function(func, index, value)
-    warn("debug.setupvalue called!") 
-    return checkcaller() and debug.setupvalue(func, index, value) or nil
-end)
-
-getreg = hookfunction(getreg, function(...)
-    warn("getreg called!") 
-    return checkcaller() and getreg(...) or {}
-end)
-
-getfenv = hookfunction(getfenv, function(func)
-    warn("getfenv called!") 
-    return checkcaller() and getfenv(func) or {}
-end)
-
-setfenv = hookfunction(setfenv, function(func, env)
-    warn("setfenv called!") 
-    return checkcaller() and setfenv(func, env) or nil
-end)
-
-pairs = hookfunction(pairs, function(table)
-    warn("pairs called!") 
-    return checkcaller() and pairs(table) or {}
-end)
+debug.getinfo = hideFunction(debug.getinfo)
+debug.getupvalues = hideFunction(debug.getupvalues)
+debug.getconstants = hideFunction(debug.getconstants)
+debug.traceback = hideFunction(debug.traceback)
+debug.setupvalue = hideFunction(debug.setupvalue)
+getreg = hideFunction(getreg)
+getgc = hideFunction(getgc)
+getfenv = hideFunction(getfenv)
+setfenv = hideFunction(setfenv)
+pairs = hideFunction(pairs)
