@@ -1,27 +1,33 @@
 #!/bin/bash
 
-echo "Closing Roblox if running..."
+echo "[*] Closing Roblox..."
 killall Roblox 2>/dev/null
 
-echo "Removing Roblox files and caches..."
-rm -rf ~/Library/Application\ Support/Roblox
-rm -rf ~/Library/Caches/com.roblox.*
-rm -rf ~/Applications/Roblox.app
+echo "[*] Removing Roblox files..."
+rm -rf ~/Applications/Roblox.app \
+       ~/Library/Application\ Support/Roblox \
+       ~/Library/Caches/com.roblox.* \
+       ~/Library/Saved\ Application\ State/com.roblox.* \
+       ~/Library/Preferences/com.roblox.* \
+       ~/Library/Logs/Roblox
 
-echo "Downloading latest Roblox..."
-curl -o ~/Downloads/Roblox.dmg https://setup.rbxcdn.com/mac/Roblox.dmg
+echo "[*] Downloading Roblox installer..."
+curl -sSL -o ~/Downloads/Roblox.dmg https://setup.rbxcdn.com/mac/Roblox.dmg
 
-echo "Mounting Roblox installer..."
-hdiutil attach ~/Downloads/Roblox.dmg
+echo "[*] Mounting installer..."
+hdiutil attach ~/Downloads/Roblox.dmg -nobrowse -quiet
 
-echo "Installing Roblox..."
+echo "[*] Installing Roblox..."
 cp -R /Volumes/Roblox/Roblox.app /Applications/
 
-echo "Cleaning up..."
-hdiutil detach /Volumes/Roblox
+echo "[*] Cleaning up..."
+hdiutil detach /Volumes/Roblox -quiet
 rm ~/Downloads/Roblox.dmg
 
-echo "Launching Roblox..."
+echo "[*] Allowing Roblox through Gatekeeper..."
+xattr -dr com.apple.quarantine /Applications/Roblox.app
+
+echo "[*] Launching Roblox..."
 open /Applications/Roblox.app
 
-echo "Done! Roblox has been reinstalled and launched."
+echo "[✓] Roblox has been fixed and relaunched."
